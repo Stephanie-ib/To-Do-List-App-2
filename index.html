@@ -33,6 +33,23 @@
       <div class="todo-list"></div>
     </div>
 
+    <div class="modal" id="editModal">
+      <div class="modal-content">
+        <h3>Edit Task</h3>
+        <input type="text" id="editName" placeholder="Task name" />
+        <input type="date" id="editDate" />
+        <select id="editPriority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <div class="modal-buttons">
+          <button id="saveEditBtn">Save</button>
+          <button id="cancelEditBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

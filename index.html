@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <p>Todo List <img src="notepad-icon.jpg" /></p>
+
+      <div class="todo-input-grid">
+        <input placeholder="write tasks" class="input-name" />
+        <input type="date" class="due-date" />
+        <button class="add-button">Add</button>
+      </div>
+
+      <div class="select">
+        <select name="tasks" class="filter-task">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+
+      <div class="todo-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

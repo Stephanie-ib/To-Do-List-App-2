@@ -56,6 +56,16 @@ input[type="checkbox"] {
   background-color: #fff;
 }
 
+.priority-select {
+  padding: 10px;
+  font-size: 15px;
+  border: 2px solid #b19cd9;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+  color: #6a0dad;
+}
+
 .add-button {
   background-color: #7b2cbf;
   color: white;

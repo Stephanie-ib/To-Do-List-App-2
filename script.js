@@ -34,7 +34,7 @@ function renderTodoList() {
       ${todoObject.priority || "Low"}
     </span>
     <button class="delete-button js-delete" data-index="${index}">Delete</button>
-    <button class="delete-button js-edit" data-index="${index}" style="background-color:#ffd700;color:#4b0082">Edit</button>
+    <button class="delete-button js-edit" data-index="${index}" style="background-color:#ffd700;color:#4b0082">✏️</button>
         </div>
         `;
     todoListHTML += html;
@@ -117,4 +117,26 @@ function showTasks() {
 // Add buttonn
 document.querySelector(".add-button").addEventListener("click", () => {
   addTask();
+});
+
+// Edit button
+document.querySelectorAll(".js-edit").forEach((editButton) => {
+  editButton.addEventListener("click", () => {
+    const index = editButton.dataset.index;
+    const task = todoList[index];
+
+    const newName = prompt("Edit task name:", task.name);
+    const newDate = prompt("Edit due date (YYYY-MM-DD):", task.dueDate);
+    const newPriority = prompt(
+      "Edit priority (Low, Medium, High):",
+      task.priority
+    );
+
+    if (newName !== null) task.name = newName;
+    if (newDate !== null) task.dueDate = newDate;
+    if (newPriority !== null) task.priority = newPriority;
+
+    renderTodoList();
+    saveData();
+  });
 });

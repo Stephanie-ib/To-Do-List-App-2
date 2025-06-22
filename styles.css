@@ -9,6 +9,12 @@ body {
   color: #4b0082;
 }
 
+.app-container {
+  border: 3px solid #6a0dad;
+  border-radius: 20px;
+  padding: 20px;
+}
+
 p {
   font-size: 32px;
   font-weight: bold;
@@ -131,9 +137,10 @@ input[type="checkbox"] {
 }
 
 .todo-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
   align-items: center;
+  gap: 10px;
   background-color: #e0bbff;
   padding: 10px;
   border-radius: 8px;
@@ -160,9 +167,6 @@ input[type="checkbox"] {
   outline: none;
   width: 200px;
   appearance: none;
-  /*
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%236a0dad" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    */
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 16px;

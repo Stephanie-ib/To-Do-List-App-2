@@ -1,0 +1,342 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0d1b2a;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f5f7fa;
+}
+
+.app-container {
+  background: #f9fafc;
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 8px 25px rgba(13, 27, 42, 0.3);
+  border: 1px solid #d1d9e6;
+  color: #142850;
+}
+
+/* Header */
+p {
+  font-size: 34px;
+  font-weight: 600;
+  color: #142850;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+p img {
+  height: 48px;
+  filter: none;
+}
+
+/* INPUT SECTION */
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 1fr 150px 120px 60px;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.input-name,
+.due-date,
+.priority-select,
+.filter-task {
+  font-size: 16px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 2px solid #142850;
+  background-color: #ffffff;
+  color: #142850;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-name::placeholder,
+.due-date::placeholder,
+.priority-select::placeholder {
+  color: #9aa5b1;
+}
+
+.input-name:focus,
+.due-date:focus,
+.priority-select:focus,
+.filter-task:focus {
+  border-color: #3a7bd5;
+  box-shadow: 0 0 8px 2px #3a7bd5;
+  color: #142850;
+}
+
+/* ADD BUTTON */
+.add-button {
+  background-color: #06225a;
+  color: #f9fafc;
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.25s ease;
+}
+
+.add-button:hover {
+  background-color: #3a7bd5;
+  transform: scale(1.15);
+}
+
+/* FILTER SECTION */
+.select {
+  margin-bottom: 25px;
+}
+
+.filter-task {
+  width: 100%;
+  background-color: #ffffff;
+  color: #142850;
+  border-radius: 12px;
+  border: 2px solid #142850;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-task:hover,
+.filter-task:focus {
+  border-color: #3a7bd5;
+  box-shadow: 0 0 8px 2px #3a7bd5;
+  color: #142850;
+}
+
+/* TASK LIST */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.todo-row {
+  display: grid;
+  grid-template-columns: 1fr 110px 90px 70px 50px;
+  align-items: center;
+  gap: 12px;
+  background-color: #eaf1fb;
+  padding: 15px 20px;
+  border-radius: 14px;
+  font-size: 16px;
+  color: #142850;
+  box-shadow: 0 3px 15px rgba(20, 40, 80, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.todo-row.completed {
+  background-color: #d1d9e6;
+  color: #718096;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  background-image: url("./images/unchecked.png");
+  background-size: cover;
+  margin-right: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none;
+  filter: drop-shadow(0 0 0.4px rgba(0 0 0 / 0.1));
+  transition: filter 0.25s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-image: url("./images/checked.png");
+  filter: drop-shadow(0 0 5px #3a7bd5);
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #718096;
+  opacity: 0.7;
+}
+
+/* Buttons */
+.delete-button {
+  background: transparent;
+  color: #f9fafc;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(230, 57, 70, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c62828;
+}
+
+.edit-button {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(69, 123, 157, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #85878a;
+}
+
+/* PRIORITY LABEL */
+.priority-label {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.priority-low {
+  color: #4caf50;
+  border-color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.15);
+}
+
+.priority-medium {
+  color: #ffb300;
+  border-color: #ffb300;
+  background-color: rgba(255, 179, 0, 0.15);
+}
+
+.priority-high {
+  color: #e63946;
+  border-color: #e63946;
+  background-color: rgba(230, 57, 70, 0.15);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 40, 80, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px 30px;
+  background: #f9fafc;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(13, 27, 42, 0.2);
+  color: #142850;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 15px;
+  margin: 14px 0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #142850;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: #3a7bd5;
+  box-shadow: 0 0 10px 3px #3a7bd5;
+  color: #142850;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#saveEditBtn {
+  background-color: #6baa6e;
+  color: #f9fafc;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#saveEditBtn:hover {
+  background-color: #357a38;
+}
+
+#cancelEditBtn {
+  background-color: #bbbaba;
+  color: #333;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(200, 200, 200, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+#cancelEditBtn:hover {
+  background-color: #cfcfcf;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 700px) {
+  .todo-input-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .todo-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 15px;
+  }
+
+  .add-button {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+
+  .modal-content {
+    padding: 25px 20px;
+  }
+}

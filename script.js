@@ -30,16 +30,17 @@ function renderTodoList() {
     else priorityClass = "priority-low";
 
     const html = `
-        <div class="${rowClass}">
-            <label class="${completedClass}">
+    <div class="${rowClass}">
+        <label class="${completedClass}">
           <input type="checkbox" class="js-checkbox" data-index="${index}" ${isChecked}>
           ${name}
         </label>
+
         <div style="color:${dateColor}" class="${completedClass}">${dueDate}</div>
         <span class="priority-label ${priorityClass}">${priority}</span>
-        <button class="delete-button js-delete" data-index="${index}">Delete</button>
         <button class="edit-button js-edit" data-index="${index}">✏️</button>
-        </div>
+        <button class="delete-button js-delete" data-index="${index}">❌</button>
+    </div>
         `;
     todoListHTML += html;
   });

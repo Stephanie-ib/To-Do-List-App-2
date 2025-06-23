@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do List</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="app-container">
-      <p>Todo List <img src="notepad-icon.jpg" /></p>
+      <p>Todo List <img src="./images/pen_logo.png" /></p>
 
       <div class="todo-input-grid">
         <input placeholder="write tasks" class="input-name" />
@@ -19,7 +23,7 @@
           <option value="High">High</option>
         </select>
 
-        <button class="add-button">Add</button>
+        <button class="add-button">➕</button>
       </div>
 
       <div class="select">
@@ -33,6 +37,7 @@
       <div class="todo-list"></div>
     </div>
 
+    <!--Edit Modal-->
     <div class="modal" id="editModal">
       <div class="modal-content">
         <h3>Edit Task</h3>
@@ -44,8 +49,8 @@
           <option value="High">High</option>
         </select>
         <div class="modal-buttons">
-          <button id="saveEditBtn">Save</button>
-          <button id="cancelEditBtn">Cancel</button>
+          <button id="saveEditBtn">✅</button>
+          <button id="cancelEditBtn">❌</button>
         </div>
       </div>
     </div>

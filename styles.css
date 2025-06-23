@@ -1,22 +1,23 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f0ff;
+  font-family: "Poppins", sans-serif;
+  background: #ecebeb;
   margin: 0;
   padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #4b0082;
 }
 
 .app-container {
+  background: #ffffff;
+  backdrop-filter: blur(12px);
   border: 2px solid #b19cd9;
-  border-radius: 20px;
+  border-radius: 18px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
-  background-color: #fef9ff;
-  width: 95%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 90%;
   max-width: 700px;
+  margin: auto;
 }
 
 p {
@@ -30,7 +31,8 @@ p {
 }
 
 p img {
-  height: 30px;
+  height: 60px;
+  margin-left: 10px;
 }
 
 .todo-input-grid {
@@ -52,19 +54,18 @@ p img {
 }
 
 .add-button {
-  background-color: #7b2cbf;
-  color: white;
+  background-color: #2d1949;
   border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  padding: 10px 25px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .add-button:hover {
-  background-color: #5a189a;
+  background-color: #7c4dff;
   transform: scale(1.05);
 }
 
@@ -82,7 +83,18 @@ p img {
 
 input[type="checkbox"] {
   transform: scale(1.2);
-  margin-right: 8px;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background-image: url("./images/unchecked.png");
+  background-size: cover;
+  cursor: pointer;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  background-image: url("./images/checked.png");
 }
 
 .completed-task {
@@ -92,12 +104,10 @@ input[type="checkbox"] {
 }
 
 .delete-button {
-  background-color: #ff4d6d;
-  color: white;
+  background-color: rgb(97, 16, 16);
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  padding: 8px;
+  border-radius: 10px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -107,29 +117,32 @@ input[type="checkbox"] {
 
 .edit-button {
   background-color: #ffd700;
-  color: #4b0082;
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  padding: 8px;
+  border-radius: 10px;
+  padding: 10px;
   cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #ffc107;
 }
 
 .priority-label {
   font-size: 13px;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 50px;
   font-weight: bold;
+  text-align: center;
   text-transform: uppercase;
-  background-color: #fff;
+  background-color: white;
 }
 
 .priority-low {
-  color: #4caf50;
+  color: #03dac6;
 }
 
 .priority-medium {
-  color: #ff9800;
+  color: #ffb300;
 }
 
 .priority-high {
@@ -198,12 +211,16 @@ input[type="checkbox"] {
 }
 
 #saveEditBtn {
-  background-color: #7b2cbf;
+  background-color: #6200ee;
   color: #fff;
   border: none;
   padding: 10px 15px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+#saveEditBtn:hover {
+  background-color: #7c4dff;
 }
 
 #cancelEditBtn {
